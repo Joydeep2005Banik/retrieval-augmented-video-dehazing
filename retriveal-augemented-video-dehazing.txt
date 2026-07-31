@@ -10,4 +10,4 @@ step 5: feature aggregration; after step 4 lets say we get embeddings r1, r2, r3
 step 6: dehazing; we concatenate hazy embeddings Zq and context embeddings R in X=[Zq, R]. X is put in the network that helps it to know hazy and retreived embeddings and provides output as g^(x)
 step 7: loss; here we either perform pixel loss (L1=(1/N)*sum(gi-g^i) for i =1 to N), perceptual loss (L2=||phi(g^) - phi(g)||where phi() represents feature extractor, phi(g) represents clean image feature and phi(g^) represents predicted image feature) or contrastive retrieval loss ( L3=- log [{e^(cos(Zh,Zg)/tow)}/{sum(e^(cos(Zh,Zg)/tow)}] where tow represents temperature value that controls sharp feature similarity). thus the total loss is L=(L1*W1) + (L2*W2) + (L3*W3) where W1,W2,W3 are experimental weights
 step 8: reconstruction; after step 7 we get predicted vectors that can be represented as h^={h1^, h2^,.....hT^}. after restorating we get G^={g1^,g2^,.....gT^}. this is encoded back to a video using encoding algorithm.
-based on the above help and write me the code implementation preferably in python
+
